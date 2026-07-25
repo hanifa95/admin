@@ -8,6 +8,7 @@ import Edit from "./pages/edit";
 import Detail from "./pages/detail";
 import List from "./pages/list";
 import Orders from "./pages/orders";
+import EditOrder from "./pages/editOrder";
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
         <Route path='/detail/:id' element={<Detail/>} />
         <Route path='/list' element={<List/>} />
         <Route path='/orders' element={<Orders/>} />
+        <Route path='/editOrder/:id' element={<EditOrder/>} />
+        {/* <Route path="/edit/:id" element={<EditOrder />} /> */}
       </Routes>
     </Router>
   );
