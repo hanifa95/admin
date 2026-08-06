@@ -19,6 +19,8 @@ const Products = () => {
         price: price,
         description: description,
         image: image,
+        quantity: 0,
+        inStock: false,
       },
     });
     if (response.status == 201 || response.status == 200) {
@@ -95,7 +97,9 @@ const Products = () => {
 
         <div className="col-6 text-center mt-4">
           <a href="/orders">
-            <button className="btn btn-primary me-3 col-3 fw-bold">Orders</button>
+            <button className="btn btn-primary me-3 col-3 fw-bold">
+              Orders
+            </button>
           </a>
           <button
             type="button"
@@ -105,6 +109,10 @@ const Products = () => {
           >
             <i class="fa-solid fa-plus"></i> Add product
           </button>
+
+          <a href="/inventory">
+            <button className="btn btn-primary ms-3 fw-bold">Inventory</button>
+          </a>
 
           <div
             class="modal fade"

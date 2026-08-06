@@ -9,6 +9,7 @@ import Detail from "./pages/detail";
 import List from "./pages/list";
 import Orders from "./pages/orders";
 import EditOrder from "./pages/editOrder";
+import Inventory from "./pages/inventory";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/list" element={<List />} />
         <Route path="/orders" element={<Orders />} />
         <Route path="/editOrder/:id" element={<EditOrder />} />
+        <Route path="/inventory" element={<Inventory />} />
       </Routes>
     </Router>
   );
