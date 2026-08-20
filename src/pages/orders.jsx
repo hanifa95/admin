@@ -218,6 +218,12 @@ const Orders = () => {
                     >
                       Delete
                     </button>
+                    
+                    <a href={`/orders/${order.id}`} className="">
+                    <button className="btn btn-danger  form-control mt-2 mb-2">
+                      View Details
+                    </button>
+                  </a>
 
                   </div>
                 </div>
