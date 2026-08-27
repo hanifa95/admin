@@ -83,17 +83,26 @@ const Products = () => {
       </div>
 
       <div className="row">
-        <div className="col-12 border-bottom border-1">
+        <div className="col-8 border-bottom border-1">
           <h2 className="p-4 fw-bold">Dashboard/Products</h2>
+        </div>
+        <div className="col-4 border-bottom border-1 text-end">
+          <a href="/courier">
+          <button className="mt-5 btn btn-primary ps-5 pe-5 fw-bold">Courier</button>
+          </a>
+        
         </div>
       </div>
 
       <div className="row">
         <div className="col-6">
           <h2 className="p-4 fw-bold text-center">List of products </h2>
+      
         </div>
 
         {/* <div className="col-2"> </div> */}
+         
+    
 
         <div className="col-6 text-center mt-4">
           <a href="/orders">
