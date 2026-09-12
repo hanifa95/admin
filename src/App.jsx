@@ -12,6 +12,7 @@ import EditOrder from "./pages/editOrder";
 import Inventory from "./pages/inventory";
 import OrdersDetail from "./pages/orders-details";
 import Courier from "./pages/courier";
+import CourierList from "./pages/courierList";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/inventory" element={<Inventory />} />
         <Route path="/orders/:id" element={<OrdersDetail />} />
         <Route path="/courier" element={<Courier/>} />
+        <Route path="/courierList" element={<CourierList/>} />
       </Routes>
     </Router>
   );

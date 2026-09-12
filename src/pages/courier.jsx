@@ -125,8 +125,14 @@ const Courier = () => {
     <div className="container py-4">
       <h2 className="text-center text-dark pt-3 fw-bold mb-4">
         <i className="fa-solid fa-user-shield me-2"></i>
-        Список курьеров
+        Список заказов
       </h2>
+      
+      <div className="text-end">
+            <a href="/courierList">
+              <button className="btn btn-warning">CourierList</button>
+            </a>
+          </div>
 
       {orders.length === 0 ? (
         <div className="alert alert-warning text-center">
