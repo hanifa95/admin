@@ -2,15 +2,15 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const API =  "https://6a2fc982a7f8866418d5125a.mockapi.io/orders"
+const API =  "https://695ff14b7f037703a81543ad.mockapi.io/courier"
 
 const EditOrder = () => {
     const { id } = useParams();
     const navigate = useNavigate();
 
-    const [customerName, setCustomerName] = useState("");
-    const [customerPhone, setCustomerPhone] = useState("");
-    const [address, setAddress] = useState("");
+    const [name, setName] = useState("");
+    const [phone, setPhone] = useState("");
+    const [rating, setRating] = useState("");
     const [loading, setLoading] = useState(true);
 
     // Получение пользователя
@@ -18,9 +18,9 @@ const EditOrder = () => {
         try {
             const response = await axios.get(`${API}/${id}`);
 
-            setCustomerName(response.data.customerName || "");
-            setCustomerPhone(response.data.customerPhone || "");
-            setAddress(response.data.address || "");
+            setName(response.data.name || "");
+            setPhone(response.data.phone || "");
+            setRating(response.data.rating || "");
 
         } catch (error) {
             console.log("Ошибка загрузки:", error);
@@ -36,23 +36,23 @@ const EditOrder = () => {
             const response = await axios.put(
                 `${API}/${id}`,
                 {
-                    customerName,
-                    customerPhone,
-                    address
+                    name,
+                    phone,
+                    rating
                 }
             );
 
 
             // обновляем localStorage
             localStorage.setItem(
-                "order",
+                "editOrder",
                 JSON.stringify(response.data)
             );
 
 
             alert("Данные успешно изменены");
 
-            navigate("/orders");
+            navigate("/courierList");
 
 
         } catch (error) {
@@ -88,7 +88,7 @@ const EditOrder = () => {
 
                         <div className="card-header bg-success text-white text-center">
                             <h3>
-                                Edit Order
+                                Edit Courier
                             </h3>
                         </div>
 
@@ -117,8 +117,8 @@ const EditOrder = () => {
                             <input
                                 className="form-control mb-3"
                                 type="text"
-                                value={customerName}
-                                onChange={(e)=>setCustomerName(e.target.value)}
+                                value={name}
+                                onChange={(e)=>setName(e.target.value)}
                             />
 
 
@@ -130,21 +130,21 @@ const EditOrder = () => {
                             <input
                                 className="form-control mb-3"
                                 type="text"
-                                value={customerPhone}
-                                onChange={(e)=>setCustomerPhone(e.target.value)}
+                                value={phone}
+                                onChange={(e)=>setPhone(e.target.value)}
                             />
 
 
 
                             <label className="fw-bold">
-                                Address
+                                Rating
                             </label>
 
                             <input
                                 className="form-control mb-4"
                                 type="text"
-                                value={address}
-                                onChange={(e)=>setAddress(e.target.value)}
+                                value={rating}
+                                onChange={(e)=>setRating(e.target.value)}
                             />
 
 

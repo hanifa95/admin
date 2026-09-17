@@ -219,7 +219,7 @@ const Courier = () => {
                     </div>
 
                     <button
-                      className="btn btn-  w-100"
+                      className="btn btn-primary  w-100"
                       onClick={() => deleteOrder(order.id)}
                     >
                       Delete
