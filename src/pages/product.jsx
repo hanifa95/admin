@@ -75,8 +75,13 @@ const Products = () => {
           <a href="" className="text-light fw-bold">
             Ventas
           </a>
+         
         </div>
-        <div className="col-5"></div>
+        <div className="col-5">
+        <a href="/pickupPoint" className="text-light fw-bold ps-5">
+            PickupPoint
+          </a>
+        </div>
         <div className="col-2 text-center">
           <i class="fa-solid fa-bell fs-4 text-light"></i>
         </div>

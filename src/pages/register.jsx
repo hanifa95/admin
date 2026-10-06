@@ -52,6 +52,8 @@ const Register = () => {
           <a href="" className="text-light fw-bold">
             Ventas
           </a>
+        
+
         </div>
         <div className="col-5"></div>
         <div className="col-2 text-center">

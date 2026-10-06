@@ -13,6 +13,7 @@ import Inventory from "./pages/inventory";
 import OrdersDetail from "./pages/orders-details";
 import Courier from "./pages/courier";
 import CourierList from "./pages/courierList";
+import PickupPoint from "./pages/pickupPoint";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="/orders/:id" element={<OrdersDetail />} />
         <Route path="/courier" element={<Courier/>} />
         <Route path="/courierList" element={<CourierList/>} />
+        <Route path="/pickupPoint" element={<PickupPoint/>} />
       </Routes>
     </Router>
   );
