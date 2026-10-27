@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
+const USD_TO_KGS = 87.85;
+
 const Products = () => {
   const [notes, setNotes] = useState([]);
   const [title, setTitle] = useState("");
@@ -75,10 +77,9 @@ const Products = () => {
           <a href="" className="text-light fw-bold">
             Ventas
           </a>
-         
         </div>
         <div className="col-5">
-        <a href="/pickupPoint" className="text-light fw-bold ps-5">
+          <a href="/pickupPoint" className="text-light fw-bold ps-5">
             PickupPoint
           </a>
         </div>
@@ -93,21 +94,19 @@ const Products = () => {
         </div>
         <div className="col-4 border-bottom border-1 text-end">
           <a href="/courier">
-          <button className="mt-5 btn btn-primary ps-5 pe-5 fw-bold">Courier</button>
+            <button className="mt-5 btn btn-primary ps-5 pe-5 fw-bold">
+              Courier
+            </button>
           </a>
-        
         </div>
       </div>
 
       <div className="row">
         <div className="col-6">
           <h2 className="p-4 fw-bold text-center">List of products </h2>
-      
         </div>
 
         {/* <div className="col-2"> </div> */}
-         
-    
 
         <div className="col-6 text-center mt-4">
           <a href="/orders">
@@ -287,8 +286,11 @@ const Products = () => {
                       <div className="col-2">
                         <p>{note.category}</p>
                       </div>
+
+                      {/* курс доллара */}
                       <div className="col-2">
-                        <p>{note.price}$</p>
+                        <p>{Number(note.price).toLocaleString("ru-RU")} сом</p>
+                        <p>${(Number(note.price) / USD_TO_KGS).toFixed(2)}</p>
                       </div>
 
                       <div className="col-2">
