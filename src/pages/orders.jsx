@@ -175,6 +175,11 @@ const Orders = () => {
                       <strong>Адрес:</strong> {order.address}
                     </p>
 
+                    <p className="mb-3">
+                      <i className="fa-solid fa-location-dot text-danger me-2"></i>
+                      <strong>Вес товара:</strong> {order.weight}
+                    </p>
+
                     {order.totalAmount && (
                       <p className="mb-0 fs-5 fw-bold text-success">
                         <i className="fa-solid fa-money-bill-wave me-2"></i>

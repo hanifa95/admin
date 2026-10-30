@@ -10,6 +10,7 @@ const Products = () => {
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
+  const [weight, setWeight] = useState("");
 
   const addNote = async () => {
     const response = await axios({
@@ -34,6 +35,7 @@ const Products = () => {
         setPrice(""),
         setDescription(""),
         setImage("");
+        setWeight("");
     }
   };
   const getNotes = async () => {
@@ -210,7 +212,20 @@ const Products = () => {
 
                   <div className="row">
                     <div className="col-12">
-                      <p className="ps-2 fw-bold">Image</p>
+                      <p className="ps-2 fw-bold">Weight</p>
+                      <input
+                        type="text"
+                        placeholder="Weight"
+                        onChange={(e) => setWeight(e.target.value)}
+                        className="col-4 form-control"
+                        value={weight}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="row">
+                    <div className="col-12">
+                      <p className="ps-2 pt-3 fw-bold">Image</p>
                       <input
                         type="text"
                         placeholder="Image URL"
@@ -220,6 +235,8 @@ const Products = () => {
                       />
                     </div>
                   </div>
+
+
                 </div>
                 <div class="modal-footer">
                   <button
@@ -260,6 +277,9 @@ const Products = () => {
             <div className="col-2">
               <p className="fw-bold pt-2">Description</p>
             </div>
+            <div className="col-2">
+              <p className="fw-bold pt-2">Weight</p>
+            </div>
           </div>
         </div>
       </div>
@@ -293,23 +313,32 @@ const Products = () => {
                         <p>${(Number(note.price) / USD_TO_KGS).toFixed(2)}</p>
                       </div>
 
+                   
+
                       <div className="col-2">
                         <p>{note.description}</p>
                       </div>
+
+   <div className="col-2">
+                      <p>{note.weight}</p>
+                      </div>
+
                       <div className="col-2">
                         <button
-                          className="btn btn-primary form-control"
+                          className="btn btn-primary me-3"
                           onClick={() => deleteNote(note.id)}
                         >
                           Delete
                         </button>
-                      </div>
-                      <div className="col-2">
-                        <button className="btn btn-primary form-control">
+                        <button className="btn btn-primary ">
                           <a href={`/edit/${note.id}`} className="text-light ">
                             Edit
                           </a>
                         </button>
+
+                      </div>
+                      <div className="col-2">
+                     
                       </div>
                     </div>
                   </div>
